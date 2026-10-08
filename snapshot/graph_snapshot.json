@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T14:18:33.259925+00:00",
+  "generated_at": "2026-10-08T14:36:30.570354+00:00",
   "stats": {
     "trees": 4,
     "steps": 22,
@@ -68,6 +68,11 @@
         "description": "Display not responding"
       },
       {
+        "code": "E-510",
+        "severity": "warning",
+        "description": "Motion Sensor failure"
+      },
+      {
         "code": "E-601",
         "severity": "info",
         "description": "Torque sensor calibration needed"
@@ -112,6 +117,11 @@
       {
         "name": "Mid-Drive Motor",
         "category": "drivetrain",
+        "aliases": []
+      },
+      {
+        "name": "Motion Sensor",
+        "category": "sensor",
         "aliases": []
       },
       {
