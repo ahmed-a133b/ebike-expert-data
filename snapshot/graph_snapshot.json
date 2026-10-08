@@ -1,0 +1,1164 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-08T14:18:33.259925+00:00",
+  "stats": {
+    "trees": 4,
+    "steps": 22,
+    "conclusions": 14,
+    "fixes": 21
+  },
+  "escalation": {
+    "label": "Not sure / can't do this",
+    "message": "Please stop here and contact a certified e-bike technician for hands-on support.",
+    "requires_technician": true
+  },
+  "hazard_patterns": [
+    "battery\\s*(disassembl|teardown|open|take\\s*apart|pack\\s*remov)",
+    "(opening|open|disassembl\\w*|teardown|take\\s*apart|remov\\w*)\\s+(the\\s+)?battery",
+    "high(-|\\s)?voltage",
+    "frame\\s*(structural|damage|crack|weld|break)",
+    "cell\\s*replacement",
+    "solder",
+    "lithium",
+    "\\bbms\\b",
+    "short\\s*circuit",
+    "electr(ical|ocution|ic\\s*shock)",
+    "fork\\s*(structural|crack|break|bend)"
+  ],
+  "vocabulary": {
+    "error_codes": [
+      {
+        "code": "E-101",
+        "severity": "critical",
+        "description": "Battery communication failure"
+      },
+      {
+        "code": "E-102",
+        "severity": "warning",
+        "description": "Battery overtemperature warning"
+      },
+      {
+        "code": "E-201",
+        "severity": "critical",
+        "description": "Motor hall sensor error"
+      },
+      {
+        "code": "E-202",
+        "severity": "warning",
+        "description": "Motor overcurrent detected"
+      },
+      {
+        "code": "E-301",
+        "severity": "warning",
+        "description": "Speed sensor signal lost"
+      },
+      {
+        "code": "E-302",
+        "severity": "info",
+        "description": "Speed sensor intermittent"
+      },
+      {
+        "code": "E-401",
+        "severity": "critical",
+        "description": "Controller short circuit"
+      },
+      {
+        "code": "E-501",
+        "severity": "warning",
+        "description": "Display not responding"
+      },
+      {
+        "code": "E-601",
+        "severity": "info",
+        "description": "Torque sensor calibration needed"
+      },
+      {
+        "code": "E-701",
+        "severity": "warning",
+        "description": "Charger fault detected"
+      },
+      {
+        "code": "E-801",
+        "severity": "warning",
+        "description": "Throttle signal error"
+      }
+    ],
+    "components": [
+      {
+        "name": "Battery Pack",
+        "category": "electrical",
+        "aliases": []
+      },
+      {
+        "name": "Charger",
+        "category": "electrical",
+        "aliases": []
+      },
+      {
+        "name": "Converter",
+        "category": "electrical",
+        "aliases": []
+      },
+      {
+        "name": "Display Unit",
+        "category": "electronics",
+        "aliases": []
+      },
+      {
+        "name": "Hydraulic Brakes",
+        "category": "braking",
+        "aliases": []
+      },
+      {
+        "name": "Mid-Drive Motor",
+        "category": "drivetrain",
+        "aliases": []
+      },
+      {
+        "name": "Motor Controller",
+        "category": "electronics",
+        "aliases": []
+      },
+      {
+        "name": "Rear Derailleur",
+        "category": "drivetrain",
+        "aliases": []
+      },
+      {
+        "name": "Speed Sensor",
+        "category": "sensor",
+        "aliases": []
+      },
+      {
+        "name": "Throttle",
+        "category": "controls",
+        "aliases": []
+      },
+      {
+        "name": "Torque Sensor",
+        "category": "sensor",
+        "aliases": []
+      },
+      {
+        "name": "Wiring Harness",
+        "category": "electrical",
+        "aliases": []
+      }
+    ],
+    "symptoms": [
+      {
+        "keyword": "blank-screen",
+        "description": "Display screen is completely blank",
+        "aliases": []
+      },
+      {
+        "keyword": "boot-loop",
+        "description": "Display keeps restarting in a loop",
+        "aliases": []
+      },
+      {
+        "keyword": "burning-smell",
+        "description": "Burning or electrical smell from controller",
+        "aliases": []
+      },
+      {
+        "keyword": "clicking",
+        "description": "Clicking noise from motor area",
+        "aliases": []
+      },
+      {
+        "keyword": "cuts-out",
+        "description": "Motor power cuts out during ride",
+        "aliases": []
+      },
+      {
+        "keyword": "dead",
+        "description": "Bike appears completely dead",
+        "aliases": []
+      },
+      {
+        "keyword": "dead-charger",
+        "description": "Charger appears completely dead",
+        "aliases": []
+      },
+      {
+        "keyword": "display-zero",
+        "description": "Display shows zero speed constantly",
+        "aliases": []
+      },
+      {
+        "keyword": "drops-out",
+        "description": "Speed reading drops out intermittently",
+        "aliases": []
+      },
+      {
+        "keyword": "flickering",
+        "description": "Display flickers on and off",
+        "aliases": []
+      },
+      {
+        "keyword": "frozen",
+        "description": "Display is frozen and unresponsive",
+        "aliases": []
+      },
+      {
+        "keyword": "glitchy",
+        "description": "Display shows garbled or glitchy content",
+        "aliases": []
+      },
+      {
+        "keyword": "hot",
+        "description": "Component feels hot to touch",
+        "aliases": []
+      },
+      {
+        "keyword": "inconsistent-assist",
+        "description": "Motor assistance level is inconsistent",
+        "aliases": []
+      },
+      {
+        "keyword": "intermittent",
+        "description": "Issue comes and goes unpredictably",
+        "aliases": []
+      },
+      {
+        "keyword": "jerky",
+        "description": "Motor assistance is jerky or uneven",
+        "aliases": []
+      },
+      {
+        "keyword": "no-assist",
+        "description": "Motor does not provide pedal assistance",
+        "aliases": []
+      },
+      {
+        "keyword": "no-display",
+        "description": "No image shown on display unit",
+        "aliases": []
+      },
+      {
+        "keyword": "no-light",
+        "description": "Charger indicator light does not turn on",
+        "aliases": []
+      },
+      {
+        "keyword": "no-motor-spin",
+        "description": "Motor does not spin when throttle is used",
+        "aliases": []
+      },
+      {
+        "keyword": "no-power",
+        "description": "Bike has no power at all",
+        "aliases": []
+      },
+      {
+        "keyword": "no-speed",
+        "description": "Speedometer reads zero while riding",
+        "aliases": []
+      },
+      {
+        "keyword": "not-charging",
+        "description": "Battery does not charge when plugged in",
+        "aliases": []
+      },
+      {
+        "keyword": "overheating",
+        "description": "Component overheating during use",
+        "aliases": []
+      },
+      {
+        "keyword": "pedal-lag",
+        "description": "Delay between pedaling and motor response",
+        "aliases": []
+      },
+      {
+        "keyword": "random-errors",
+        "description": "Random error codes appear and disappear",
+        "aliases": []
+      },
+      {
+        "keyword": "rattling",
+        "description": "Rattling noise from frame area",
+        "aliases": []
+      },
+      {
+        "keyword": "shuts-down",
+        "description": "System shuts down unexpectedly during ride",
+        "aliases": []
+      },
+      {
+        "keyword": "sparking",
+        "description": "Visible sparking or arcing",
+        "aliases": []
+      },
+      {
+        "keyword": "speed-flickers",
+        "description": "Speed display flickers between values",
+        "aliases": []
+      },
+      {
+        "keyword": "surging",
+        "description": "Motor surges or pulses during pedaling",
+        "aliases": []
+      },
+      {
+        "keyword": "throttle-error",
+        "description": "Throttle error symbol on display",
+        "aliases": []
+      },
+      {
+        "keyword": "throttle-sticking",
+        "description": "Throttle grip sticks or grinds",
+        "aliases": []
+      },
+      {
+        "keyword": "throttle-unresponsive",
+        "description": "Throttle does not respond when twisted",
+        "aliases": []
+      },
+      {
+        "keyword": "throttle-wire-damage",
+        "description": "Visible damage or kink on the throttle wire",
+        "aliases": []
+      },
+      {
+        "keyword": "unresponsive",
+        "description": "Bike does not respond to power button",
+        "aliases": []
+      },
+      {
+        "keyword": "wrong-speed",
+        "description": "Speedometer shows incorrect speed",
+        "aliases": []
+      }
+    ]
+  },
+  "triggers": [
+    {
+      "target_type": "Symptom",
+      "target_value": "unresponsive",
+      "tree_id": "tree-power",
+      "priority": 3
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "dead",
+      "tree_id": "tree-power",
+      "priority": 2
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "no-power",
+      "tree_id": "tree-power",
+      "priority": 2
+    },
+    {
+      "target_type": "Component",
+      "target_value": "Motor Controller",
+      "tree_id": "tree-power",
+      "priority": 3
+    },
+    {
+      "target_type": "Component",
+      "target_value": "Battery Pack",
+      "tree_id": "tree-power",
+      "priority": 2
+    },
+    {
+      "target_type": "ErrorCode",
+      "target_value": "E-401",
+      "tree_id": "tree-power",
+      "priority": 1
+    },
+    {
+      "target_type": "ErrorCode",
+      "target_value": "E-101",
+      "tree_id": "tree-power",
+      "priority": 1
+    },
+    {
+      "target_type": "ErrorCode",
+      "target_value": "E-501",
+      "tree_id": "tree-display",
+      "priority": 1
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "flickering",
+      "tree_id": "tree-display",
+      "priority": 5
+    },
+    {
+      "target_type": "Component",
+      "target_value": "Display Unit",
+      "tree_id": "tree-display",
+      "priority": 4
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "blank-screen",
+      "tree_id": "tree-display",
+      "priority": 3
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "no-display",
+      "tree_id": "tree-display",
+      "priority": 2
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "drops-out",
+      "tree_id": "tree-speed",
+      "priority": 3
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "wrong-speed",
+      "tree_id": "tree-speed",
+      "priority": 2
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "no-speed",
+      "tree_id": "tree-speed",
+      "priority": 2
+    },
+    {
+      "target_type": "Component",
+      "target_value": "Speed Sensor",
+      "tree_id": "tree-speed",
+      "priority": 2
+    },
+    {
+      "target_type": "ErrorCode",
+      "target_value": "E-302",
+      "tree_id": "tree-speed",
+      "priority": 1
+    },
+    {
+      "target_type": "ErrorCode",
+      "target_value": "E-301",
+      "tree_id": "tree-speed",
+      "priority": 1
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "throttle-error",
+      "tree_id": "tree-throttle",
+      "priority": 3
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "throttle-unresponsive",
+      "tree_id": "tree-throttle",
+      "priority": 2
+    },
+    {
+      "target_type": "Component",
+      "target_value": "Throttle",
+      "tree_id": "tree-throttle",
+      "priority": 2
+    },
+    {
+      "target_type": "ErrorCode",
+      "target_value": "E-801",
+      "tree_id": "tree-throttle",
+      "priority": 1
+    }
+  ],
+  "trees": [
+    {
+      "tree_id": "tree-power",
+      "title": "Bike has no power / appears dead",
+      "scope": "error_code",
+      "version": 1,
+      "is_active": true,
+      "max_steps": 8,
+      "entry_step_id": "ds-power-1",
+      "steps": [
+        {
+          "step_id": "ds-power-2b",
+          "step_type": "question",
+          "instruction": "With the battery removed, sniff near the controller box (usually located under the downtube or near the motor area).",
+          "question": "Do you notice a burnt or electrical smell coming from the controller area?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-controller-mosfet-failure",
+            "description": "MOSFET failure in controller due to moisture ingress",
+            "safety_class": "caution",
+            "fixes": [
+              {
+                "fix_id": "fix-replace-motor-controller",
+                "description": "Replace motor controller unit (dealer-only repair)",
+                "difficulty": "hard",
+                "requires_technician": true,
+                "est_minutes": 120,
+                "warranty_status": "covered",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-power-2a",
+          "step_type": "question",
+          "instruction": "Remove the battery from the frame and inspect the connector pins on both the battery and the frame mount.",
+          "question": "Do you see green corrosion, bent pins, or debris on the connector?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-bms-comm-timeout",
+            "description": "BMS chip communication timeout due to corroded connector pins",
+            "safety_class": "caution",
+            "fixes": [
+              {
+                "fix_id": "fix-clean-battery-connector-pins",
+                "description": "Clean battery connector pins with contact cleaner and reseat",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 15,
+                "warranty_status": "covered",
+                "rank": 1
+              },
+              {
+                "fix_id": "fix-replace-bms-board",
+                "description": "Replace BMS board (dealer-only repair)",
+                "difficulty": "hard",
+                "requires_technician": true,
+                "est_minutes": 90,
+                "warranty_status": "covered",
+                "rank": 2
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-power-1",
+          "step_type": "question",
+          "instruction": "Look at the battery indicator LEDs on the battery pack itself (not the display). Press the battery check button if your model has one.",
+          "question": "Are the battery indicator LEDs completely off (no lights at all when you press the check button)?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "yes",
+              "label": "LEDs are completely off",
+              "action": "step",
+              "to_step_id": "ds-power-2a"
+            },
+            {
+              "condition": "no",
+              "label": "LEDs show some activity",
+              "action": "step",
+              "to_step_id": "ds-power-2b"
+            }
+          ],
+          "concludes": null
+        }
+      ]
+    },
+    {
+      "tree_id": "tree-display",
+      "title": "Display is blank / not responding",
+      "scope": "error_code",
+      "version": 2,
+      "is_active": true,
+      "max_steps": 8,
+      "entry_step_id": "ds-disp-1",
+      "steps": [
+        {
+          "step_id": "ds-disp-2b",
+          "step_type": "question",
+          "instruction": "Think back to whether a firmware update was recently attempted or interrupted on this display.",
+          "question": "Was a firmware update attempted or interrupted shortly before this problem started?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-display-firmware-corruption",
+            "description": "Display firmware corruption after interrupted update",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-flash-display-firmware",
+                "description": "Flash display firmware via USB using manufacturer tool",
+                "difficulty": "medium",
+                "requires_technician": true,
+                "est_minutes": 30,
+                "warranty_status": null,
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-disp-1",
+          "step_type": "question",
+          "instruction": "Try pressing and holding the power button on the display for 5 seconds, then release.",
+          "question": "Does the display briefly flash or flicker before going blank again?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "display-flashes-briefly",
+              "label": "Display flashes briefly",
+              "action": "step",
+              "to_step_id": "ds-disp-2a"
+            },
+            {
+              "condition": "display-stays-completely-blank",
+              "label": "Display stays completely blank",
+              "action": "step",
+              "to_step_id": "ds-disp-2b"
+            }
+          ],
+          "concludes": null
+        },
+        {
+          "step_id": "ds-disp-2a",
+          "step_type": "question",
+          "instruction": "Gently wiggle the cable connector where it plugs into the back of the display unit.",
+          "question": "Does the display come on (even intermittently) when you wiggle the cable?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-display-cable-unseated",
+            "description": "Display ribbon cable unseated from connector",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-reseat-display-cable",
+                "description": "Reseat display ribbon cable and apply dielectric grease",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": null,
+                "rank": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "tree_id": "tree-speed",
+      "title": "Speed reading wrong / missing",
+      "scope": "error_code",
+      "version": 1,
+      "is_active": true,
+      "max_steps": 8,
+      "entry_step_id": "ds-speed-1",
+      "steps": [
+        {
+          "step_id": "ds-speed-2b",
+          "step_type": "question",
+          "instruction": "Check the magnet on the wheel spoke. It should be attached firmly and aligned with the sensor.",
+          "question": "Is the magnet loose, missing, or visibly rotated away from the sensor?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-speed-magnet-misaligned",
+            "description": "Speed sensor magnet misaligned or missing from wheel spoke",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-realign-speed-magnet",
+                "description": "Realign speed sensor magnet to 1-2mm gap from sensor face",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": "not_required",
+                "rank": 1
+              },
+              {
+                "fix_id": "fix-replace-speed-magnet",
+                "description": "Replace speed sensor magnet ring on wheel hub",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 20,
+                "warranty_status": "covered",
+                "rank": 2
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-speed-2a",
+          "step_type": "question",
+          "instruction": "Look at the gap between the speed sensor (mounted on the frame/fork) and the magnet on the wheel spoke.",
+          "question": "Is the gap visibly larger than about 3mm (roughly the thickness of two coins stacked)?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-speed-sensor-gap",
+            "description": "Air gap between speed sensor and magnet too large (>3mm)",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-realign-speed-magnet",
+                "description": "Realign speed sensor magnet to 1-2mm gap from sensor face",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": "not_required",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-speed-1",
+          "step_type": "question",
+          "instruction": "Spin the front or rear wheel slowly and watch the speed reading on the display.",
+          "question": "Does the speed reading flicker between a value and zero (rather than staying at zero the whole time)?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "yes",
+              "label": "Speed flickers between value and zero",
+              "action": "step",
+              "to_step_id": "ds-speed-2a"
+            },
+            {
+              "condition": "no",
+              "label": "Speed stays at zero constantly",
+              "action": "step",
+              "to_step_id": "ds-speed-2b"
+            }
+          ],
+          "concludes": null
+        }
+      ]
+    },
+    {
+      "tree_id": "tree-throttle",
+      "title": "Throttle not working",
+      "scope": "component",
+      "version": 2,
+      "is_active": true,
+      "max_steps": 8,
+      "entry_step_id": "ds-throttle-1",
+      "steps": [
+        {
+          "step_id": "ds-throttle-wire-damaged",
+          "step_type": "fix_action",
+          "instruction": "Visible damage on the throttle wire means it needs replacing.",
+          "question": null,
+          "expected_response": "acknowledge",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-wire-damage",
+            "description": "Throttle wire broken or chafed along its run",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-replace-throttle-wire",
+                "description": "Replace the throttle wire run",
+                "difficulty": "medium",
+                "requires_technician": true,
+                "est_minutes": 40,
+                "warranty_status": "covered",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-mech",
+          "step_type": "fix_action",
+          "instruction": "The throttle grip is sticking. Free the grip and clear any obstruction.",
+          "question": null,
+          "expected_response": "acknowledge",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-mechanical-binding",
+            "description": "Throttle grip mechanically binding or obstructed",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-free-throttle-grip",
+                "description": "Free the throttle grip and remove obstructions",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": "not_required",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-alt-wiring",
+          "step_type": "instruction",
+          "instruction": "The error persists even after reattaching the connector. There may be a break in the throttle wire itself. Inspect the wire from the throttle grip all the way to the headlight for any visible damage, kinks, or cuts.",
+          "question": "Do you see any visible damage along the throttle wire?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-wire-disconnected",
+            "description": "Throttle wire disconnected from headlight connector",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-reattach-throttle-connector",
+                "description": "Reattach the throttle wire connector inside the headlight housing",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": "not_required",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-alt-motor",
+          "step_type": "question",
+          "instruction": "The throttle signal is reaching the controller but the motor is not responding. This suggests a motor controller or motor winding issue that requires professional diagnosis.",
+          "question": null,
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-motor-no-response",
+            "description": "Motor not responding to throttle signal despite valid input",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-check-motor-throttle",
+                "description": "Inspect motor controller for throttle signal processing fault",
+                "difficulty": "hard",
+                "requires_technician": true,
+                "est_minutes": 90,
+                "warranty_status": "covered",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-alt-ctrl",
+          "step_type": "question",
+          "instruction": "The connector looks fine, which suggests the throttle controller board may be at fault. This requires professional diagnosis.",
+          "question": null,
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-controller-malfunction",
+            "description": "Throttle controller board malfunction",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-replace-throttle-controller",
+                "description": "Replace the throttle controller board (dealer repair)",
+                "difficulty": "hard",
+                "requires_technician": true,
+                "est_minutes": 60,
+                "warranty_status": "covered",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-replace-conn",
+          "step_type": "fix_action",
+          "instruction": "The connector appears damaged and needs to be replaced. This requires soldering or a crimp replacement. If you are not comfortable doing this, please visit a certified technician.",
+          "question": null,
+          "expected_response": "acknowledge",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-connector-damaged",
+            "description": "Throttle wire connector physically damaged",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-replace-throttle-connector",
+                "description": "Replace the damaged throttle wire connector",
+                "difficulty": "medium",
+                "requires_technician": true,
+                "est_minutes": 30,
+                "warranty_status": "covered",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-no-error",
+          "step_type": "question",
+          "instruction": "Since there is no throttle error on the display, the issue may be mechanical. Check if the throttle grip moves freely.",
+          "question": "Does the throttle grip rotate smoothly without sticking or grinding?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-controller-malfunction",
+            "description": "Throttle controller board malfunction",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-replace-throttle-controller",
+                "description": "Replace the throttle controller board (dealer repair)",
+                "difficulty": "hard",
+                "requires_technician": true,
+                "est_minutes": 60,
+                "warranty_status": "covered",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-resolved",
+          "step_type": "question",
+          "instruction": "The throttle issue has been resolved by reattaching the connector.",
+          "question": null,
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-wire-disconnected",
+            "description": "Throttle wire disconnected from headlight connector",
+            "safety_class": "none",
+            "fixes": [
+              {
+                "fix_id": "fix-reattach-throttle-connector",
+                "description": "Reattach the throttle wire connector inside the headlight housing",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": "not_required",
+                "rank": 1
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-5",
+          "step_type": "verification",
+          "instruction": "With the bike on a stand (rear wheel off the ground), twist the throttle.",
+          "question": "Does the motor spin when you twist the throttle?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "yes",
+              "label": "Motor spins",
+              "action": "step",
+              "to_step_id": "ds-throttle-resolved"
+            },
+            {
+              "condition": "no",
+              "label": "Motor does not spin",
+              "action": "step",
+              "to_step_id": "ds-throttle-alt-motor"
+            }
+          ],
+          "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-4",
+          "step_type": "verification",
+          "instruction": "Close the headlight housing and turn the bike on. Check the display for the throttle error.",
+          "question": "Is the throttle error on the display gone?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "yes",
+              "label": "Error is gone",
+              "action": "step",
+              "to_step_id": "ds-throttle-5"
+            },
+            {
+              "condition": "no",
+              "label": "Error still showing",
+              "action": "step",
+              "to_step_id": "ds-throttle-alt-wiring"
+            }
+          ],
+          "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-3",
+          "step_type": "fix_action",
+          "instruction": "Reattach the throttle wire connector firmly. You should hear a small click when it seats properly. Make sure the wires are not pinched.",
+          "question": null,
+          "expected_response": "acknowledge",
+          "media_ref": null,
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "ack",
+              "label": "Connector reattached",
+              "action": "step",
+              "to_step_id": "ds-throttle-4"
+            }
+          ],
+          "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-2",
+          "step_type": "instruction",
+          "instruction": "Open the headlight housing by removing the two screws on the underside. Inside, locate the throttle wire connector — it is a small white 3-pin connector on the left side. Check its condition.",
+          "question": "What do you see? Is the connector disconnected, damaged, or does it look fine?",
+          "expected_response": "observation",
+          "media_ref": "headlight_connector.png",
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "disconnected",
+              "label": "Connector is disconnected",
+              "action": "step",
+              "to_step_id": "ds-throttle-3"
+            },
+            {
+              "condition": "damaged",
+              "label": "Connector is damaged",
+              "action": "step",
+              "to_step_id": "ds-throttle-replace-conn"
+            },
+            {
+              "condition": "connected",
+              "label": "Connector looks fine",
+              "action": "step",
+              "to_step_id": "ds-throttle-alt-ctrl"
+            }
+          ],
+          "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-1",
+          "step_type": "question",
+          "instruction": "Look at the display for the throttle error symbol. It looks like a small lightning bolt with a hand grip icon.",
+          "question": "Is there a throttle error being shown on the display?",
+          "expected_response": "yes_no",
+          "media_ref": "throttle_symbol.png",
+          "safety_class": null,
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "yes",
+              "label": "Throttle error is shown",
+              "action": "step",
+              "to_step_id": "ds-throttle-2"
+            },
+            {
+              "condition": "no",
+              "label": "No throttle error on display",
+              "action": "step",
+              "to_step_id": "ds-throttle-no-error"
+            }
+          ],
+          "concludes": null
+        }
+      ]
+    }
+  ],
+  "media": [
+    "headlight_connector.png",
+    "throttle_symbol.png"
+  ]
+}
