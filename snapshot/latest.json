@@ -1,6 +1,6 @@
 {
   "snapshot_url": "https://raw.githubusercontent.com/ahmed-a133b/ebike-expert-data/main/snapshot/graph_snapshot.json",
-  "snapshot_version": 1791470916,
-  "schema_version": 1,
-  "sha256": "e2fda26a41fee4218c9a0488067a0a245e5653a5560ff9c5fab6453a78feb6b2"
+  "snapshot_version": 1791558102,
+  "schema_version": 2,
+  "sha256": "9cc6c966d549901921ed65959c8129184c4a53243e6f6c45a8d11eed0dc8863a"
 }
