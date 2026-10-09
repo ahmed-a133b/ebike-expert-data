@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T15:53:58.275477+00:00",
+  "generated_at": "2026-10-09T16:13:31.209178+00:00",
   "stats": {
     "trees": 4,
     "steps": 22,
@@ -31,73 +31,121 @@
         "code": "E-101",
         "severity": "critical",
         "description": "Battery communication failure",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "بیٹری کمیونیکیشن کی خرابی"
+          }
+        }
       },
       {
         "code": "E-102",
         "severity": "warning",
         "description": "Battery overtemperature warning",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "بیٹری کے زیادہ درجہ حرارت کی وارننگ"
+          }
+        }
       },
       {
         "code": "E-201",
         "severity": "critical",
         "description": "Motor hall sensor error",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "موٹر ہال سینسر کا ایرر"
+          }
+        }
       },
       {
         "code": "E-202",
         "severity": "warning",
         "description": "Motor overcurrent detected",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "موٹر اوور کرنٹ ڈیٹیکٹ ہوا"
+          }
+        }
       },
       {
         "code": "E-301",
         "severity": "warning",
         "description": "Speed sensor signal lost",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "سپیڈ سینسر کا سگنل غائب ہو گیا"
+          }
+        }
       },
       {
         "code": "E-302",
         "severity": "info",
         "description": "Speed sensor intermittent",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "سپیڈ سینسر کا رک رک کر کام کرنا"
+          }
+        }
       },
       {
         "code": "E-401",
         "severity": "critical",
         "description": "Controller short circuit",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "کنٹرولر شارٹ سرکٹ"
+          }
+        }
       },
       {
         "code": "E-501",
         "severity": "warning",
         "description": "Display not responding",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے کام نہیں کر رہا"
+          }
+        }
       },
       {
         "code": "E-510",
         "severity": "warning",
         "description": "Motion Sensor failure",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "موشن سینسر کی خرابی"
+          }
+        }
       },
       {
         "code": "E-601",
         "severity": "info",
         "description": "Torque sensor calibration needed",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ٹارک سینسر کیلیبریشن کی ضرورت ہے"
+          }
+        }
       },
       {
         "code": "E-701",
         "severity": "warning",
         "description": "Charger fault detected",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "چارجر میں خرابی کا پتہ چلا ہے"
+          }
+        }
       },
       {
         "code": "E-801",
         "severity": "warning",
         "description": "Throttle signal error",
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "تھروٹل سگنل کی خرابی"
+          }
+        }
       }
     ],
     "components": [
@@ -105,79 +153,131 @@
         "name": "Battery Pack",
         "category": "electrical",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "بیٹری پیک"
+          }
+        }
       },
       {
         "name": "Charger",
         "category": "electrical",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "چارجر"
+          }
+        }
       },
       {
         "name": "Converter",
         "category": "electrical",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "کنورٹر"
+          }
+        }
       },
       {
         "name": "Display Unit",
         "category": "electronics",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "ڈسپلے یونٹ"
+          }
+        }
       },
       {
         "name": "Hydraulic Brakes",
         "category": "braking",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "ہائیڈرولک بریک"
+          }
+        }
       },
       {
         "name": "Mid-Drive Motor",
         "category": "drivetrain",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "مڈ ڈرائیو موٹر"
+          }
+        }
       },
       {
         "name": "Motion Sensor",
         "category": "sensor",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "موشن سینسر"
+          }
+        }
       },
       {
         "name": "Motor Controller",
         "category": "electronics",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "موٹر کنٹرولر"
+          }
+        }
       },
       {
         "name": "Rear Derailleur",
         "category": "drivetrain",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "پچھلا ڈیریلر"
+          }
+        }
       },
       {
         "name": "Speed Sensor",
         "category": "sensor",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "سپیڈ سینسر"
+          }
+        }
       },
       {
         "name": "Throttle",
         "category": "controls",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "تھروٹل"
+          }
+        }
       },
       {
         "name": "Torque Sensor",
         "category": "sensor",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "ٹارک سینسر"
+          }
+        }
       },
       {
         "name": "Wiring Harness",
         "category": "electrical",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "name": "وائرنگ ہارنس"
+          }
+        }
       }
     ],
     "symptoms": [
@@ -185,223 +285,371 @@
         "keyword": "blank-screen",
         "description": "Display screen is completely blank",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے اسکرین بالکل خالی ہے"
+          }
+        }
       },
       {
         "keyword": "boot-loop",
         "description": "Display keeps restarting in a loop",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے بار بار ری اسٹارٹ ہو رہا ہے"
+          }
+        }
       },
       {
         "keyword": "burning-smell",
         "description": "Burning or electrical smell from controller",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "کنٹرولر سے جلنے کی یا الیکٹریکل بو آنا"
+          }
+        }
       },
       {
         "keyword": "clicking",
         "description": "Clicking noise from motor area",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "موٹر کے حصے سے ٹک ٹک کی آواز"
+          }
+        }
       },
       {
         "keyword": "cuts-out",
         "description": "Motor power cuts out during ride",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "سواری کے دوران موٹر کی پاور کٹ جاتی ہے"
+          }
+        }
       },
       {
         "keyword": "dead",
         "description": "Bike appears completely dead",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "بائیک بالکل بند لگتی ہے"
+          }
+        }
       },
       {
         "keyword": "dead-charger",
         "description": "Charger appears completely dead",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "چارجر بالکل ڈیڈ لگتا ہے"
+          }
+        }
       },
       {
         "keyword": "display-zero",
         "description": "Display shows zero speed constantly",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے مسلسل صفر رفتار دکھاتا ہے"
+          }
+        }
       },
       {
         "keyword": "drops-out",
         "description": "Speed reading drops out intermittently",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "رفتار کی ریڈنگ وقفے وقفے سے غائب ہو جاتی ہے"
+          }
+        }
       },
       {
         "keyword": "flickering",
         "description": "Display flickers on and off",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے آن اور آف ہو کر ٹمٹماتا ہے"
+          }
+        }
       },
       {
         "keyword": "frozen",
         "description": "Display is frozen and unresponsive",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے فریز ہو گیا ہے اور کوئی جواب نہیں دے رہا"
+          }
+        }
       },
       {
         "keyword": "glitchy",
         "description": "Display shows garbled or glitchy content",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے پر خراب یا گڑبڑ والی معلومات نظر آ رہی ہیں"
+          }
+        }
       },
       {
         "keyword": "hot",
         "description": "Component feels hot to touch",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "پرزہ چھونے پر گرم محسوس ہوتا ہے"
+          }
+        }
       },
       {
         "keyword": "inconsistent-assist",
         "description": "Motor assistance level is inconsistent",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "موٹر اسسٹنس کا لیول غیر مستقل ہے"
+          }
+        }
       },
       {
         "keyword": "intermittent",
         "description": "Issue comes and goes unpredictably",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "مسئلہ اچانک آتا اور جاتا رہتا ہے"
+          }
+        }
       },
       {
         "keyword": "jerky",
         "description": "Motor assistance is jerky or uneven",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "موٹر کی مدد جھٹکے دار یا ناہموار ہے"
+          }
+        }
       },
       {
         "keyword": "no-assist",
         "description": "Motor does not provide pedal assistance",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "موٹر پیڈل کی مدد فراہم نہیں کرتی"
+          }
+        }
       },
       {
         "keyword": "no-display",
         "description": "No image shown on display unit",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے یونٹ پر کوئی تصویر نظر نہیں آ رہی"
+          }
+        }
       },
       {
         "keyword": "no-light",
         "description": "Charger indicator light does not turn on",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "چارجر کی انڈیکیٹر لائٹ آن نہیں ہوتی"
+          }
+        }
       },
       {
         "keyword": "no-motor-spin",
         "description": "Motor does not spin when throttle is used",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "تھروٹل استعمال کرنے پر موٹر نہیں گھومتی"
+          }
+        }
       },
       {
         "keyword": "no-power",
         "description": "Bike has no power at all",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "بائیک میں بالکل پاور نہیں ہے"
+          }
+        }
       },
       {
         "keyword": "no-speed",
         "description": "Speedometer reads zero while riding",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "سواری کے دوران سپیڈومیٹر صفر دکھاتا ہے"
+          }
+        }
       },
       {
         "keyword": "not-charging",
         "description": "Battery does not charge when plugged in",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "پلگ ان کرنے پر بیٹری چارج نہیں ہوتی"
+          }
+        }
       },
       {
         "keyword": "overheating",
         "description": "Component overheating during use",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "استعمال کے دوران پرزہ بہت زیادہ گرم ہو رہا ہے"
+          }
+        }
       },
       {
         "keyword": "pedal-lag",
         "description": "Delay between pedaling and motor response",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "پیڈل مارنے اور موٹر کے رسپانس کے درمیان تاخیر"
+          }
+        }
       },
       {
         "keyword": "random-errors",
         "description": "Random error codes appear and disappear",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "اچانک ایرر کوڈز ظاہر اور غائب ہوتے ہیں"
+          }
+        }
       },
       {
         "keyword": "rattling",
         "description": "Rattling noise from frame area",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "فریم کے حصے سے کھڑکھڑاہٹ کی آواز"
+          }
+        }
       },
       {
         "keyword": "shuts-down",
         "description": "System shuts down unexpectedly during ride",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "سواری کے دوران سسٹم اچانک بند ہو جاتا ہے"
+          }
+        }
       },
       {
         "keyword": "sparking",
         "description": "Visible sparking or arcing",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "چنگاریاں یا آرکنگ واضح طور پر نظر آ رہی ہے"
+          }
+        }
       },
       {
         "keyword": "speed-flickers",
         "description": "Speed display flickers between values",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "رفتار کا ڈسپلے ویلیوز کے درمیان ٹمٹماتا ہے"
+          }
+        }
       },
       {
         "keyword": "surging",
         "description": "Motor surges or pulses during pedaling",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "پیڈل مارنے کے دوران موٹر کا جھٹکے لینا یا اچانک تیز ہونا"
+          }
+        }
       },
       {
         "keyword": "throttle-error",
         "description": "Throttle error symbol on display",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "ڈسپلے پر تھروٹل ایرر کا نشان"
+          }
+        }
       },
       {
         "keyword": "throttle-sticking",
         "description": "Throttle grip sticks or grinds",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "تھروٹل گرپ پھنس جاتی ہے یا رگڑ کھاتی ہے"
+          }
+        }
       },
       {
         "keyword": "throttle-unresponsive",
         "description": "Throttle does not respond when twisted",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "گھمانے پر تھروٹل کام نہیں کرتا"
+          }
+        }
       },
       {
         "keyword": "throttle-wire-damage",
         "description": "Visible damage or kink on the throttle wire",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "تھروٹل وائر پر واضح نقصان یا بل"
+          }
+        }
       },
       {
         "keyword": "unresponsive",
         "description": "Bike does not respond to power button",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "بائیک پاور بٹن پر کوئی ردعمل نہیں دیتی"
+          }
+        }
       },
       {
         "keyword": "wrong-speed",
         "description": "Speedometer shows incorrect speed",
         "aliases": [],
-        "translations": null
+        "translations": {
+          "ur": {
+            "description": "سپیڈومیٹر غلط رفتار دکھاتا ہے"
+          }
+        }
       }
     ]
   },
