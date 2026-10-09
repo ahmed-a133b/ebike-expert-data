@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T15:01:42.784794+00:00",
+  "generated_at": "2026-10-09T15:42:22.639484+00:00",
   "stats": {
     "trees": 4,
     "steps": 22,
@@ -437,12 +437,6 @@
       "priority": 5
     },
     {
-      "target_type": "ErrorCode",
-      "target_value": "E-501",
-      "tree_id": "tree-display",
-      "priority": 1
-    },
-    {
       "target_type": "Symptom",
       "target_value": "flickering",
       "tree_id": "tree-display",
@@ -461,34 +455,22 @@
       "priority": 3
     },
     {
+      "target_type": "ErrorCode",
+      "target_value": "E-501",
+      "tree_id": "tree-display",
+      "priority": 1
+    },
+    {
       "target_type": "Symptom",
       "target_value": "no-display",
       "tree_id": "tree-display",
       "priority": 2
     },
     {
-      "target_type": "Symptom",
-      "target_value": "drops-out",
-      "tree_id": "tree-speed",
-      "priority": 3
-    },
-    {
-      "target_type": "Symptom",
-      "target_value": "wrong-speed",
-      "tree_id": "tree-speed",
-      "priority": 2
-    },
-    {
-      "target_type": "Symptom",
-      "target_value": "no-speed",
-      "tree_id": "tree-speed",
-      "priority": 2
-    },
-    {
       "target_type": "Component",
       "target_value": "Speed Sensor",
       "tree_id": "tree-speed",
-      "priority": 2
+      "priority": 5
     },
     {
       "target_type": "ErrorCode",
@@ -500,12 +482,24 @@
       "target_type": "ErrorCode",
       "target_value": "E-301",
       "tree_id": "tree-speed",
-      "priority": 1
+      "priority": 2
     },
     {
       "target_type": "Symptom",
-      "target_value": "throttle-error",
-      "tree_id": "tree-throttle",
+      "target_value": "no-speed",
+      "tree_id": "tree-speed",
+      "priority": 4
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "drops-out",
+      "tree_id": "tree-speed",
+      "priority": 6
+    },
+    {
+      "target_type": "Symptom",
+      "target_value": "wrong-speed",
+      "tree_id": "tree-speed",
       "priority": 3
     },
     {
@@ -515,10 +509,16 @@
       "priority": 2
     },
     {
+      "target_type": "Symptom",
+      "target_value": "throttle-error",
+      "tree_id": "tree-throttle",
+      "priority": 4
+    },
+    {
       "target_type": "Component",
       "target_value": "Throttle",
       "tree_id": "tree-throttle",
-      "priority": 2
+      "priority": 3
     },
     {
       "target_type": "ErrorCode",
@@ -696,12 +696,59 @@
       "tree_id": "tree-display",
       "title": "Display is blank / not responding",
       "scope": "error_code",
-      "version": 2,
+      "version": 3,
       "is_active": true,
       "max_steps": 8,
       "entry_step_id": "ds-disp-1",
-      "translations": null,
+      "translations": {
+        "ur": {
+          "title": "ڈسپلے خالی ہے / جواب نہیں دے رہا"
+        }
+      },
       "steps": [
+        {
+          "step_id": "ds-disp-2a",
+          "step_type": "question",
+          "instruction": "Gently wiggle the cable connector where it plugs into the back of the display unit.",
+          "question": "Does the display come on (even intermittently) when you wiggle the cable?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "translations": {
+            "ur": {
+              "instruction": "کیبل کنیکٹر کو آہستہ سے ہلائیں جہاں یہ ڈسپلے یونٹ کے پچھلے حصے میں لگتا ہے۔",
+              "question": "جب آپ کیبل کو ہلاتے ہیں تو کیا ڈسپلے آن ہوتا ہے (چاہے وقفے وقفے سے ہی کیوں نہ ہو)؟"
+            }
+          },
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-display-cable-unseated",
+            "description": "Display ribbon cable unseated from connector",
+            "safety_class": "none",
+            "translations": {
+              "ur": {
+                "description": "ڈسپلے ربن کیبل کنیکٹر سے نکل گئی ہے"
+              }
+            },
+            "fixes": [
+              {
+                "fix_id": "fix-reseat-display-cable",
+                "description": "Reseat display ribbon cable and apply dielectric grease",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": null,
+                "rank": 1,
+                "translations": {
+                  "ur": {
+                    "description": "ڈسپلے ربن کیبل کو دوبارہ لگائیں اور ڈائی الیکٹرک گریس لگائیں"
+                  }
+                }
+              }
+            ]
+          }
+        },
         {
           "step_id": "ds-disp-2b",
           "step_type": "question",
@@ -710,14 +757,23 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "یاد کریں کہ کیا حال ہی میں اس ڈسپلے پر فرم ویئر اپ ڈیٹ کی کوشش کی گئی تھی یا وہ ادھوری رہ گئی تھی۔",
+              "question": "کیا یہ مسئلہ شروع ہونے سے تھوڑی دیر پہلے فرم ویئر اپ ڈیٹ کی کوشش کی گئی تھی یا وہ ادھوری رہ گئی تھی؟"
+            }
+          },
           "is_terminal": true,
           "branches": [],
           "concludes": {
             "cause_id": "cause-display-firmware-corruption",
             "description": "Display firmware corruption after interrupted update",
             "safety_class": "none",
-            "translations": null,
+            "translations": {
+              "ur": {
+                "description": "ادھوری اپ ڈیٹ کے بعد ڈسپلے فرم ویئر کا خراب ہونا"
+              }
+            },
             "fixes": [
               {
                 "fix_id": "fix-flash-display-firmware",
@@ -727,7 +783,11 @@
                 "est_minutes": 30,
                 "warranty_status": null,
                 "rank": 1,
-                "translations": null
+                "translations": {
+                  "ur": {
+                    "description": "مینوفیکچرر ٹول کا استعمال کرتے ہوئے USB کے ذریعے ڈسپلے فرم ویئر کو فلیش کریں"
+                  }
+                }
               }
             ]
           }
@@ -740,7 +800,12 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "ڈسپلے پر موجود پاور بٹن کو 5 سیکنڈ تک دبا کر رکھنے کی کوشش کریں، پھر چھوڑ دیں۔",
+              "question": "کیا دوبارہ خالی ہونے سے پہلے ڈسپلے تھوڑی دیر کے لیے چمکتا یا ٹمٹماتا ہے؟"
+            }
+          },
           "is_terminal": false,
           "branches": [
             {
@@ -753,49 +818,27 @@
             {
               "condition": "display-flashes-briefly",
               "label": "Display flashes briefly",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "ڈسپلے تھوڑی دیر کے لیے چمکتا ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-disp-2a"
             },
             {
               "condition": "display-stays-completely-blank",
               "label": "Display stays completely blank",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "ڈسپلے مکمل طور پر خالی رہتا ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-disp-2b"
             }
           ],
           "concludes": null
-        },
-        {
-          "step_id": "ds-disp-2a",
-          "step_type": "question",
-          "instruction": "Gently wiggle the cable connector where it plugs into the back of the display unit.",
-          "question": "Does the display come on (even intermittently) when you wiggle the cable?",
-          "expected_response": "yes_no",
-          "media_ref": null,
-          "safety_class": null,
-          "translations": null,
-          "is_terminal": true,
-          "branches": [],
-          "concludes": {
-            "cause_id": "cause-display-cable-unseated",
-            "description": "Display ribbon cable unseated from connector",
-            "safety_class": "none",
-            "translations": null,
-            "fixes": [
-              {
-                "fix_id": "fix-reseat-display-cable",
-                "description": "Reseat display ribbon cable and apply dielectric grease",
-                "difficulty": "easy",
-                "requires_technician": false,
-                "est_minutes": 10,
-                "warranty_status": null,
-                "rank": 1,
-                "translations": null
-              }
-            ]
-          }
         }
       ]
     },
@@ -803,11 +846,15 @@
       "tree_id": "tree-speed",
       "title": "Speed reading wrong / missing",
       "scope": "error_code",
-      "version": 1,
+      "version": 2,
       "is_active": true,
       "max_steps": 8,
       "entry_step_id": "ds-speed-1",
-      "translations": null,
+      "translations": {
+        "ur": {
+          "title": "رفتار کی ریڈنگ غلط ہے / غائب ہے"
+        }
+      },
       "steps": [
         {
           "step_id": "ds-speed-2b",
@@ -817,14 +864,23 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "پہیے کے سپوک پر موجود مقناطیس کو چیک کریں۔ اسے مضبوطی سے جڑا ہونا چاہیے اور سینسر کے ساتھ سیدھ میں ہونا چاہیے۔",
+              "question": "کیا مقناطیس ڈھیلا ہے، غائب ہے، یا واضح طور پر سینسر سے دوسری طرف گھما ہوا ہے؟"
+            }
+          },
           "is_terminal": true,
           "branches": [],
           "concludes": {
             "cause_id": "cause-speed-magnet-misaligned",
             "description": "Speed sensor magnet misaligned or missing from wheel spoke",
             "safety_class": "none",
-            "translations": null,
+            "translations": {
+              "ur": {
+                "description": "سپیڈ سینسر کا مقناطیس پہیے کے سپوک سے غلط جگہ پر ہے یا غائب ہے"
+              }
+            },
             "fixes": [
               {
                 "fix_id": "fix-realign-speed-magnet",
@@ -832,9 +888,13 @@
                 "difficulty": "easy",
                 "requires_technician": false,
                 "est_minutes": 10,
-                "warranty_status": "not_required",
+                "warranty_status": null,
                 "rank": 1,
-                "translations": null
+                "translations": {
+                  "ur": {
+                    "description": "سپیڈ سینسر کے مقناطیس کو دوبارہ ترتیب دیں تاکہ سینسر کے چہرے سے 1-2mm کا فاصلہ رہے"
+                  }
+                }
               },
               {
                 "fix_id": "fix-replace-speed-magnet",
@@ -842,9 +902,13 @@
                 "difficulty": "easy",
                 "requires_technician": false,
                 "est_minutes": 20,
-                "warranty_status": "covered",
+                "warranty_status": null,
                 "rank": 2,
-                "translations": null
+                "translations": {
+                  "ur": {
+                    "description": "وہیل ہب پر سپیڈ سینسر مقناطیس کی رنگ کو تبدیل کریں"
+                  }
+                }
               }
             ]
           }
@@ -857,14 +921,23 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "سپیڈ سینسر (جو فریم/فورک پر لگا ہوا ہے) اور پہیے کے سپوک پر موجود مقناطیس کے درمیان فاصلے کو دیکھیں۔",
+              "question": "کیا فاصلہ واضح طور پر تقریباً 3mm سے زیادہ ہے (تقریباً دو سکوں کی موٹائی کے برابر)؟"
+            }
+          },
           "is_terminal": true,
           "branches": [],
           "concludes": {
             "cause_id": "cause-speed-sensor-gap",
             "description": "Air gap between speed sensor and magnet too large (>3mm)",
             "safety_class": "none",
-            "translations": null,
+            "translations": {
+              "ur": {
+                "description": "سپیڈ سینسر اور مقناطیس کے درمیان ہوا کا فاصلہ بہت زیادہ ہے (>3mm)"
+              }
+            },
             "fixes": [
               {
                 "fix_id": "fix-realign-speed-magnet",
@@ -872,9 +945,13 @@
                 "difficulty": "easy",
                 "requires_technician": false,
                 "est_minutes": 10,
-                "warranty_status": "not_required",
+                "warranty_status": null,
                 "rank": 1,
-                "translations": null
+                "translations": {
+                  "ur": {
+                    "description": "سپیڈ سینسر کے مقناطیس کو دوبارہ ترتیب دیں تاکہ سینسر کے چہرے سے 1-2mm کا فاصلہ رہے"
+                  }
+                }
               }
             ]
           }
@@ -887,7 +964,12 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "اگلے یا پچھلے پہیے کو آہستہ سے گھمائیں اور ڈسپلے پر رفتار کی ریڈنگ کو دیکھیں۔",
+              "question": "کیا رفتار کی ریڈنگ کسی ویلیو اور صفر کے درمیان ٹمٹماتی ہے (بجائے اس کے کہ وہ ہر وقت صفر پر ہی رہے)؟"
+            }
+          },
           "is_terminal": false,
           "branches": [
             {
@@ -900,14 +982,22 @@
             {
               "condition": "yes",
               "label": "Speed flickers between value and zero",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "رفتار کسی ویلیو اور صفر کے درمیان ٹمٹماتی ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-speed-2a"
             },
             {
               "condition": "no",
               "label": "Speed stays at zero constantly",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "رفتار مسلسل صفر پر رہتی ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-speed-2b"
             }
@@ -920,68 +1010,55 @@
       "tree_id": "tree-throttle",
       "title": "Throttle not working",
       "scope": "component",
-      "version": 2,
+      "version": 3,
       "is_active": true,
       "max_steps": 8,
       "entry_step_id": "ds-throttle-1",
-      "translations": null,
+      "translations": {
+        "ur": {
+          "title": "تھروٹل کام نہیں کر رہا ہے"
+        }
+      },
       "steps": [
         {
-          "step_id": "ds-throttle-wire-damaged",
-          "step_type": "fix_action",
-          "instruction": "Visible damage on the throttle wire means it needs replacing.",
-          "question": null,
-          "expected_response": "acknowledge",
+          "step_id": "ds-throttle-no-error",
+          "step_type": "question",
+          "instruction": "Since there is no throttle error on the display, the issue may be mechanical. Check if the throttle grip moves freely.",
+          "question": "Does the throttle grip rotate smoothly without sticking or grinding?",
+          "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "چونکہ ڈسپلے پر تھروٹل کی کوئی خرابی نہیں ہے، اس لیے مسئلہ مکینیکل ہو سکتا ہے۔ چیک کریں کہ آیا تھروٹل گرپ آسانی سے گھومتی ہے۔",
+              "question": "کیا تھروٹل گرپ بغیر اٹکے یا رگڑ کھائے آسانی سے گھومتی ہے؟"
+            }
+          },
           "is_terminal": true,
           "branches": [],
           "concludes": {
-            "cause_id": "cause-throttle-wire-damage",
-            "description": "Throttle wire broken or chafed along its run",
+            "cause_id": "cause-throttle-controller-malfunction",
+            "description": "Throttle controller board malfunction",
             "safety_class": "none",
-            "translations": null,
-            "fixes": [
-              {
-                "fix_id": "fix-replace-throttle-wire",
-                "description": "Replace the throttle wire run",
-                "difficulty": "medium",
-                "requires_technician": true,
-                "est_minutes": 40,
-                "warranty_status": "covered",
-                "rank": 1,
-                "translations": null
+            "translations": {
+              "ur": {
+                "description": "تھروٹل کنٹرولر بورڈ کی خرابی"
               }
-            ]
-          }
-        },
-        {
-          "step_id": "ds-throttle-mech",
-          "step_type": "fix_action",
-          "instruction": "The throttle grip is sticking. Free the grip and clear any obstruction.",
-          "question": null,
-          "expected_response": "acknowledge",
-          "media_ref": null,
-          "safety_class": null,
-          "translations": null,
-          "is_terminal": true,
-          "branches": [],
-          "concludes": {
-            "cause_id": "cause-throttle-mechanical-binding",
-            "description": "Throttle grip mechanically binding or obstructed",
-            "safety_class": "none",
-            "translations": null,
+            },
             "fixes": [
               {
-                "fix_id": "fix-free-throttle-grip",
-                "description": "Free the throttle grip and remove obstructions",
-                "difficulty": "easy",
-                "requires_technician": false,
-                "est_minutes": 10,
-                "warranty_status": "not_required",
+                "fix_id": "fix-replace-throttle-controller",
+                "description": "Replace the throttle controller board (dealer repair)",
+                "difficulty": "hard",
+                "requires_technician": true,
+                "est_minutes": 60,
+                "warranty_status": null,
                 "rank": 1,
-                "translations": null
+                "translations": {
+                  "ur": {
+                    "description": "تھروٹل کنٹرولر بورڈ کو تبدیل کریں (ڈیلر سے مرمت کروائیں)"
+                  }
+                }
               }
             ]
           }
@@ -994,14 +1071,23 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "کنیکٹر کو دوبارہ جوڑنے کے بعد بھی خرابی برقرار ہے۔ خود تھروٹل وائر میں کوئی ٹوٹ پھوٹ ہو سکتی ہے۔ تھروٹل گرپ سے لے کر ہیڈلائٹ تک پوری تار کا معائنہ کریں کہ کہیں کوئی واضح نقصان، بل یا کٹ تو نہیں ہے۔",
+              "question": "کیا آپ کو تھروٹل وائر پر کوئی واضح نقصان نظر آتا ہے؟"
+            }
+          },
           "is_terminal": true,
           "branches": [],
           "concludes": {
             "cause_id": "cause-throttle-wire-disconnected",
             "description": "Throttle wire disconnected from headlight connector",
             "safety_class": "none",
-            "translations": null,
+            "translations": {
+              "ur": {
+                "description": "تھروٹل وائر ہیڈلائٹ کنیکٹر سے الگ ہو گئی ہے"
+              }
+            },
             "fixes": [
               {
                 "fix_id": "fix-reattach-throttle-connector",
@@ -1009,9 +1095,13 @@
                 "difficulty": "easy",
                 "requires_technician": false,
                 "est_minutes": 10,
-                "warranty_status": "not_required",
+                "warranty_status": null,
                 "rank": 1,
-                "translations": null
+                "translations": {
+                  "ur": {
+                    "description": "ہیڈلائٹ ہاؤسنگ کے اندر تھروٹل وائر کنیکٹر کو دوبارہ جوڑیں"
+                  }
+                }
               }
             ]
           }
@@ -1024,14 +1114,22 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "تھروٹل سگنل کنٹرولر تک پہنچ رہا ہے لیکن موٹر جواب نہیں دے رہی ہے۔ اس سے موٹر کنٹرولر یا موٹر وائنڈنگ کا مسئلہ ظاہر ہوتا ہے جس کے لیے پیشہ ورانہ تشخیص کی ضرورت ہے۔"
+            }
+          },
           "is_terminal": true,
           "branches": [],
           "concludes": {
             "cause_id": "cause-throttle-motor-no-response",
             "description": "Motor not responding to throttle signal despite valid input",
             "safety_class": "none",
-            "translations": null,
+            "translations": {
+              "ur": {
+                "description": "درست ان پٹ کے باوجود موٹر تھروٹل سگنل کا جواب نہیں دے رہی ہے"
+              }
+            },
             "fixes": [
               {
                 "fix_id": "fix-check-motor-throttle",
@@ -1039,167 +1137,16 @@
                 "difficulty": "hard",
                 "requires_technician": true,
                 "est_minutes": 90,
-                "warranty_status": "covered",
+                "warranty_status": null,
                 "rank": 1,
-                "translations": null
+                "translations": {
+                  "ur": {
+                    "description": "تھروٹل سگنل پروسیسنگ کی خرابی کے لیے موٹر کنٹرولر کا معائنہ کریں"
+                  }
+                }
               }
             ]
           }
-        },
-        {
-          "step_id": "ds-throttle-alt-ctrl",
-          "step_type": "question",
-          "instruction": "The connector looks fine, which suggests the throttle controller board may be at fault. This requires professional diagnosis.",
-          "question": null,
-          "expected_response": "yes_no",
-          "media_ref": null,
-          "safety_class": null,
-          "translations": null,
-          "is_terminal": true,
-          "branches": [],
-          "concludes": {
-            "cause_id": "cause-throttle-controller-malfunction",
-            "description": "Throttle controller board malfunction",
-            "safety_class": "none",
-            "translations": null,
-            "fixes": [
-              {
-                "fix_id": "fix-replace-throttle-controller",
-                "description": "Replace the throttle controller board (dealer repair)",
-                "difficulty": "hard",
-                "requires_technician": true,
-                "est_minutes": 60,
-                "warranty_status": "covered",
-                "rank": 1,
-                "translations": null
-              }
-            ]
-          }
-        },
-        {
-          "step_id": "ds-throttle-replace-conn",
-          "step_type": "fix_action",
-          "instruction": "The connector appears damaged and needs to be replaced. This requires soldering or a crimp replacement. If you are not comfortable doing this, please visit a certified technician.",
-          "question": null,
-          "expected_response": "acknowledge",
-          "media_ref": null,
-          "safety_class": null,
-          "translations": null,
-          "is_terminal": true,
-          "branches": [],
-          "concludes": {
-            "cause_id": "cause-throttle-connector-damaged",
-            "description": "Throttle wire connector physically damaged",
-            "safety_class": "none",
-            "translations": null,
-            "fixes": [
-              {
-                "fix_id": "fix-replace-throttle-connector",
-                "description": "Replace the damaged throttle wire connector",
-                "difficulty": "medium",
-                "requires_technician": true,
-                "est_minutes": 30,
-                "warranty_status": "covered",
-                "rank": 1,
-                "translations": null
-              }
-            ]
-          }
-        },
-        {
-          "step_id": "ds-throttle-no-error",
-          "step_type": "question",
-          "instruction": "Since there is no throttle error on the display, the issue may be mechanical. Check if the throttle grip moves freely.",
-          "question": "Does the throttle grip rotate smoothly without sticking or grinding?",
-          "expected_response": "yes_no",
-          "media_ref": null,
-          "safety_class": null,
-          "translations": null,
-          "is_terminal": true,
-          "branches": [],
-          "concludes": {
-            "cause_id": "cause-throttle-controller-malfunction",
-            "description": "Throttle controller board malfunction",
-            "safety_class": "none",
-            "translations": null,
-            "fixes": [
-              {
-                "fix_id": "fix-replace-throttle-controller",
-                "description": "Replace the throttle controller board (dealer repair)",
-                "difficulty": "hard",
-                "requires_technician": true,
-                "est_minutes": 60,
-                "warranty_status": "covered",
-                "rank": 1,
-                "translations": null
-              }
-            ]
-          }
-        },
-        {
-          "step_id": "ds-throttle-resolved",
-          "step_type": "question",
-          "instruction": "The throttle issue has been resolved by reattaching the connector.",
-          "question": null,
-          "expected_response": "yes_no",
-          "media_ref": null,
-          "safety_class": null,
-          "translations": null,
-          "is_terminal": true,
-          "branches": [],
-          "concludes": {
-            "cause_id": "cause-throttle-wire-disconnected",
-            "description": "Throttle wire disconnected from headlight connector",
-            "safety_class": "none",
-            "translations": null,
-            "fixes": [
-              {
-                "fix_id": "fix-reattach-throttle-connector",
-                "description": "Reattach the throttle wire connector inside the headlight housing",
-                "difficulty": "easy",
-                "requires_technician": false,
-                "est_minutes": 10,
-                "warranty_status": "not_required",
-                "rank": 1,
-                "translations": null
-              }
-            ]
-          }
-        },
-        {
-          "step_id": "ds-throttle-5",
-          "step_type": "verification",
-          "instruction": "With the bike on a stand (rear wheel off the ground), twist the throttle.",
-          "question": "Does the motor spin when you twist the throttle?",
-          "expected_response": "yes_no",
-          "media_ref": null,
-          "safety_class": null,
-          "translations": null,
-          "is_terminal": false,
-          "branches": [
-            {
-              "condition": "*",
-              "label": "Not sure / can't do this",
-              "translations": null,
-              "action": "escalate",
-              "to_step_id": null
-            },
-            {
-              "condition": "yes",
-              "label": "Motor spins",
-              "translations": null,
-              "action": "step",
-              "to_step_id": "ds-throttle-resolved"
-            },
-            {
-              "condition": "no",
-              "label": "Motor does not spin",
-              "translations": null,
-              "action": "step",
-              "to_step_id": "ds-throttle-alt-motor"
-            }
-          ],
-          "concludes": null
         },
         {
           "step_id": "ds-throttle-4",
@@ -1209,7 +1156,12 @@
           "expected_response": "yes_no",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "ہیڈلائٹ ہاؤسنگ کو بند کریں اور بائیک کو آن کریں۔ تھروٹل کی خرابی کے لیے ڈسپلے کو چیک کریں۔",
+              "question": "کیا ڈسپلے سے تھروٹل کی خرابی ختم ہو گئی ہے؟"
+            }
+          },
           "is_terminal": false,
           "branches": [
             {
@@ -1222,19 +1174,117 @@
             {
               "condition": "yes",
               "label": "Error is gone",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "خرابی ختم ہو گئی ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-throttle-5"
             },
             {
               "condition": "no",
               "label": "Error still showing",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "خرابی اب بھی دکھائی دے رہی ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-throttle-alt-wiring"
             }
           ],
           "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-5",
+          "step_type": "verification",
+          "instruction": "With the bike on a stand (rear wheel off the ground), twist the throttle.",
+          "question": "Does the motor spin when you twist the throttle?",
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "translations": {
+            "ur": {
+              "instruction": "بائیک کو اسٹینڈ پر رکھ کر (پچھلا پہیہ زمین سے اوپر ہو)، تھروٹل کو گھمائیں۔",
+              "question": "کیا تھروٹل گھمانے پر موٹر چلتی ہے؟"
+            }
+          },
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "translations": null,
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "no",
+              "label": "Motor does not spin",
+              "translations": {
+                "ur": {
+                  "label": "موٹر نہیں چلتی ہے"
+                }
+              },
+              "action": "step",
+              "to_step_id": "ds-throttle-alt-motor"
+            },
+            {
+              "condition": "yes",
+              "label": "Motor spins",
+              "translations": {
+                "ur": {
+                  "label": "موٹر چلتی ہے"
+                }
+              },
+              "action": "step",
+              "to_step_id": "ds-throttle-resolved"
+            }
+          ],
+          "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-alt-ctrl",
+          "step_type": "question",
+          "instruction": "The connector looks fine, which suggests the throttle controller board may be at fault. This requires professional diagnosis.",
+          "question": null,
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "translations": {
+            "ur": {
+              "instruction": "کنیکٹر ٹھیک لگ رہا ہے، جس سے معلوم ہوتا ہے کہ تھروٹل کنٹرولر بورڈ میں خرابی ہو سکتی ہے۔ اس کے لیے پیشہ ورانہ تشخیص کی ضرورت ہے۔"
+            }
+          },
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-controller-malfunction",
+            "description": "Throttle controller board malfunction",
+            "safety_class": "none",
+            "translations": {
+              "ur": {
+                "description": "تھروٹل کنٹرولر بورڈ کی خرابی"
+              }
+            },
+            "fixes": [
+              {
+                "fix_id": "fix-replace-throttle-controller",
+                "description": "Replace the throttle controller board (dealer repair)",
+                "difficulty": "hard",
+                "requires_technician": true,
+                "est_minutes": 60,
+                "warranty_status": null,
+                "rank": 1,
+                "translations": {
+                  "ur": {
+                    "description": "تھروٹل کنٹرولر بورڈ کو تبدیل کریں (ڈیلر سے مرمت کروائیں)"
+                  }
+                }
+              }
+            ]
+          }
         },
         {
           "step_id": "ds-throttle-3",
@@ -1244,7 +1294,11 @@
           "expected_response": "acknowledge",
           "media_ref": null,
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "تھروٹل وائر کنیکٹر کو مضبوطی سے دوبارہ جوڑیں۔ جب یہ اپنی جگہ پر ٹھیک سے بیٹھ جائے گا تو آپ کو ایک ہلکی سی کلک کی آواز سنائی دینی چاہیے۔ یقینی بنائیں کہ تاریں دبی ہوئی نہ ہوں۔"
+            }
+          },
           "is_terminal": false,
           "branches": [
             {
@@ -1257,7 +1311,11 @@
             {
               "condition": "ack",
               "label": "Connector reattached",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "کنیکٹر دوبارہ جوڑ دیا گیا ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-throttle-4"
             }
@@ -1265,46 +1323,130 @@
           "concludes": null
         },
         {
-          "step_id": "ds-throttle-2",
-          "step_type": "instruction",
-          "instruction": "Open the headlight housing by removing the two screws on the underside. Inside, locate the throttle wire connector — it is a small white 3-pin connector on the left side. Check its condition.",
-          "question": "What do you see? Is the connector disconnected, damaged, or does it look fine?",
-          "expected_response": "observation",
-          "media_ref": "headlight_connector.png",
+          "step_id": "ds-throttle-wire-damaged",
+          "step_type": "fix_action",
+          "instruction": "Visible damage on the throttle wire means it needs replacing.",
+          "question": null,
+          "expected_response": "acknowledge",
+          "media_ref": null,
           "safety_class": null,
-          "translations": null,
-          "is_terminal": false,
-          "branches": [
-            {
-              "condition": "*",
-              "label": "Not sure / can't do this",
-              "translations": null,
-              "action": "escalate",
-              "to_step_id": null
-            },
-            {
-              "condition": "disconnected",
-              "label": "Connector is disconnected",
-              "translations": null,
-              "action": "step",
-              "to_step_id": "ds-throttle-3"
-            },
-            {
-              "condition": "damaged",
-              "label": "Connector is damaged",
-              "translations": null,
-              "action": "step",
-              "to_step_id": "ds-throttle-replace-conn"
-            },
-            {
-              "condition": "connected",
-              "label": "Connector looks fine",
-              "translations": null,
-              "action": "step",
-              "to_step_id": "ds-throttle-alt-ctrl"
+          "translations": {
+            "ur": {
+              "instruction": "تھروٹل وائر پر واضح نقصان کا مطلب ہے کہ اسے تبدیل کرنے کی ضرورت ہے۔"
             }
-          ],
-          "concludes": null
+          },
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-wire-damage",
+            "description": "Throttle wire broken or chafed along its run",
+            "safety_class": "none",
+            "translations": {
+              "ur": {
+                "description": "تھروٹل وائر اپنے راستے میں کہیں سے ٹوٹی ہوئی یا رگڑی ہوئی ہے"
+              }
+            },
+            "fixes": [
+              {
+                "fix_id": "fix-replace-throttle-wire",
+                "description": "Replace the throttle wire run",
+                "difficulty": "medium",
+                "requires_technician": true,
+                "est_minutes": 40,
+                "warranty_status": null,
+                "rank": 1,
+                "translations": {
+                  "ur": {
+                    "description": "تھروٹل وائر کے پورے حصے کو تبدیل کریں"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-replace-conn",
+          "step_type": "fix_action",
+          "instruction": "The connector appears damaged and needs to be replaced. This requires soldering or a crimp replacement. If you are not comfortable doing this, please visit a certified technician.",
+          "question": null,
+          "expected_response": "acknowledge",
+          "media_ref": null,
+          "safety_class": null,
+          "translations": {
+            "ur": {
+              "instruction": "کنیکٹر خراب معلوم ہوتا ہے اور اسے تبدیل کرنے کی ضرورت ہے۔ اس کے لیے سولڈرنگ یا کرمپ کی تبدیلی کی ضرورت ہے۔ اگر آپ یہ کرنے میں خود کو آرام دہ محسوس نہیں کرتے ہیں، تو براہ کرم کسی تصدیق شدہ ٹیکنیشن سے رجوع کریں۔"
+            }
+          },
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-connector-damaged",
+            "description": "Throttle wire connector physically damaged",
+            "safety_class": "none",
+            "translations": {
+              "ur": {
+                "description": "تھروٹل وائر کنیکٹر جسمانی طور پر خراب ہے"
+              }
+            },
+            "fixes": [
+              {
+                "fix_id": "fix-replace-throttle-connector",
+                "description": "Replace the damaged throttle wire connector",
+                "difficulty": "medium",
+                "requires_technician": true,
+                "est_minutes": 30,
+                "warranty_status": null,
+                "rank": 1,
+                "translations": {
+                  "ur": {
+                    "description": "خراب شدہ تھروٹل وائر کنیکٹر کو تبدیل کریں"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "step_id": "ds-throttle-resolved",
+          "step_type": "question",
+          "instruction": "The throttle issue has been resolved by reattaching the connector.",
+          "question": null,
+          "expected_response": "yes_no",
+          "media_ref": null,
+          "safety_class": null,
+          "translations": {
+            "ur": {
+              "instruction": "کنیکٹر کو دوبارہ جوڑنے سے تھروٹل کا مسئلہ حل ہو گیا ہے۔"
+            }
+          },
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-wire-disconnected",
+            "description": "Throttle wire disconnected from headlight connector",
+            "safety_class": "none",
+            "translations": {
+              "ur": {
+                "description": "تھروٹل وائر ہیڈلائٹ کنیکٹر سے الگ ہو گئی ہے"
+              }
+            },
+            "fixes": [
+              {
+                "fix_id": "fix-reattach-throttle-connector",
+                "description": "Reattach the throttle wire connector inside the headlight housing",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": null,
+                "rank": 1,
+                "translations": {
+                  "ur": {
+                    "description": "ہیڈلائٹ ہاؤسنگ کے اندر تھروٹل وائر کنیکٹر کو دوبارہ جوڑیں"
+                  }
+                }
+              }
+            ]
+          }
         },
         {
           "step_id": "ds-throttle-1",
@@ -1314,7 +1456,12 @@
           "expected_response": "yes_no",
           "media_ref": "throttle_symbol.png",
           "safety_class": null,
-          "translations": null,
+          "translations": {
+            "ur": {
+              "instruction": "تھروٹل کی خرابی کے نشان کے لیے ڈسپلے کو دیکھیں۔ یہ ہینڈ گرپ کے آئیکن کے ساتھ بجلی کے ایک چھوٹے کوندے جیسا لگتا ہے۔",
+              "question": "کیا ڈسپلے پر تھروٹل کی خرابی دکھائی دے رہی ہے؟"
+            }
+          },
           "is_terminal": false,
           "branches": [
             {
@@ -1327,19 +1474,128 @@
             {
               "condition": "yes",
               "label": "Throttle error is shown",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "تھروٹل کی خرابی دکھائی دے رہی ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-throttle-2"
             },
             {
               "condition": "no",
               "label": "No throttle error on display",
-              "translations": null,
+              "translations": {
+                "ur": {
+                  "label": "ڈسپلے پر تھروٹل کی کوئی خرابی نہیں ہے"
+                }
+              },
               "action": "step",
               "to_step_id": "ds-throttle-no-error"
             }
           ],
           "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-2",
+          "step_type": "instruction",
+          "instruction": "Open the headlight housing by removing the two screws on the underside. Inside, locate the throttle wire connector — it is a small white 3-pin connector on the left side. Check its condition.",
+          "question": "What do you see? Is the connector disconnected, damaged, or does it look fine?",
+          "expected_response": "observation",
+          "media_ref": "headlight_connector.png",
+          "safety_class": null,
+          "translations": {
+            "ur": {
+              "instruction": "نیچے کی طرف موجود دو پیچ نکال کر ہیڈلائٹ ہاؤسنگ کو کھولیں۔ اندر، تھروٹل وائر کنیکٹر تلاش کریں — یہ بائیں طرف ایک چھوٹا سفید 3-پن والا کنیکٹر ہے۔ اس کی حالت چیک کریں۔",
+              "question": "آپ کو کیا نظر آتا ہے؟ کیا کنیکٹر الگ ہو گیا ہے، خراب ہے، یا ٹھیک لگ رہا ہے؟"
+            }
+          },
+          "is_terminal": false,
+          "branches": [
+            {
+              "condition": "*",
+              "label": "Not sure / can't do this",
+              "translations": null,
+              "action": "escalate",
+              "to_step_id": null
+            },
+            {
+              "condition": "disconnected",
+              "label": "Connector is disconnected",
+              "translations": {
+                "ur": {
+                  "label": "کنیکٹر الگ ہو گیا ہے"
+                }
+              },
+              "action": "step",
+              "to_step_id": "ds-throttle-3"
+            },
+            {
+              "condition": "connected",
+              "label": "Connector looks fine",
+              "translations": {
+                "ur": {
+                  "label": "کنیکٹر ٹھیک لگ رہا ہے"
+                }
+              },
+              "action": "step",
+              "to_step_id": "ds-throttle-alt-ctrl"
+            },
+            {
+              "condition": "damaged",
+              "label": "Connector is damaged",
+              "translations": {
+                "ur": {
+                  "label": "کنیکٹر خراب ہے"
+                }
+              },
+              "action": "step",
+              "to_step_id": "ds-throttle-replace-conn"
+            }
+          ],
+          "concludes": null
+        },
+        {
+          "step_id": "ds-throttle-mech",
+          "step_type": "fix_action",
+          "instruction": "The throttle grip is sticking. Free the grip and clear any obstruction.",
+          "question": null,
+          "expected_response": "acknowledge",
+          "media_ref": null,
+          "safety_class": null,
+          "translations": {
+            "ur": {
+              "instruction": "تھروٹل گرپ اٹک رہی ہے۔ گرپ کو آزاد کریں اور کسی بھی رکاوٹ کو دور کریں۔"
+            }
+          },
+          "is_terminal": true,
+          "branches": [],
+          "concludes": {
+            "cause_id": "cause-throttle-mechanical-binding",
+            "description": "Throttle grip mechanically binding or obstructed",
+            "safety_class": "none",
+            "translations": {
+              "ur": {
+                "description": "تھروٹل گرپ مکینیکل طور پر جام ہے یا اس میں رکاوٹ ہے"
+              }
+            },
+            "fixes": [
+              {
+                "fix_id": "fix-free-throttle-grip",
+                "description": "Free the throttle grip and remove obstructions",
+                "difficulty": "easy",
+                "requires_technician": false,
+                "est_minutes": 10,
+                "warranty_status": null,
+                "rank": 1,
+                "translations": {
+                  "ur": {
+                    "description": "تھروٹل گرپ کو آزاد کریں اور رکاوٹیں دور کریں"
+                  }
+                }
+              }
+            ]
+          }
         }
       ]
     }
