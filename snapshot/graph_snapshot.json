@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T15:42:22.639484+00:00",
+  "generated_at": "2026-10-09T15:53:58.275477+00:00",
   "stats": {
     "trees": 4,
     "steps": 22,
@@ -30,62 +30,74 @@
       {
         "code": "E-101",
         "severity": "critical",
-        "description": "Battery communication failure"
+        "description": "Battery communication failure",
+        "translations": null
       },
       {
         "code": "E-102",
         "severity": "warning",
-        "description": "Battery overtemperature warning"
+        "description": "Battery overtemperature warning",
+        "translations": null
       },
       {
         "code": "E-201",
         "severity": "critical",
-        "description": "Motor hall sensor error"
+        "description": "Motor hall sensor error",
+        "translations": null
       },
       {
         "code": "E-202",
         "severity": "warning",
-        "description": "Motor overcurrent detected"
+        "description": "Motor overcurrent detected",
+        "translations": null
       },
       {
         "code": "E-301",
         "severity": "warning",
-        "description": "Speed sensor signal lost"
+        "description": "Speed sensor signal lost",
+        "translations": null
       },
       {
         "code": "E-302",
         "severity": "info",
-        "description": "Speed sensor intermittent"
+        "description": "Speed sensor intermittent",
+        "translations": null
       },
       {
         "code": "E-401",
         "severity": "critical",
-        "description": "Controller short circuit"
+        "description": "Controller short circuit",
+        "translations": null
       },
       {
         "code": "E-501",
         "severity": "warning",
-        "description": "Display not responding"
+        "description": "Display not responding",
+        "translations": null
       },
       {
         "code": "E-510",
         "severity": "warning",
-        "description": "Motion Sensor failure"
+        "description": "Motion Sensor failure",
+        "translations": null
       },
       {
         "code": "E-601",
         "severity": "info",
-        "description": "Torque sensor calibration needed"
+        "description": "Torque sensor calibration needed",
+        "translations": null
       },
       {
         "code": "E-701",
         "severity": "warning",
-        "description": "Charger fault detected"
+        "description": "Charger fault detected",
+        "translations": null
       },
       {
         "code": "E-801",
         "severity": "warning",
-        "description": "Throttle signal error"
+        "description": "Throttle signal error",
+        "translations": null
       }
     ],
     "components": [
